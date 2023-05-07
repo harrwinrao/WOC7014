@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+	<head>
+		<!-- Basic -->
+		<meta charset="utf-8"/>
+		<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+		<!-- Mobile Metas -->
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+		<!-- Site Metas -->
+		<meta name="keywords" content=""/>
+		<meta name="description" content=""/>
+		<meta name="author" content=""/>
+		<link rel="shortcut icon" href="{% static 'images/favicon.svg' %}" type="">
+		<title>Phone Review</title>
+		<!-- bootstrap core css -->
+		<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}"/>
+		<!--owl slider stylesheet -->
+		<link rel="stylesheet" type="text/css"
+			href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css"/>
+		<!-- nice select  -->
+		<link rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+			integrity="sha512-CruCP+TD3yXzlvvijET8wV5WxxEh5H8P4cmz0RFbKK6FlZ2sYl3AEsKlLPHbniXKSrDdFewhbmBK5skbdsASbQ=="
+			crossorigin="anonymous"/>
+		<!-- font awesome style -->
+		<link href="{% static 'css/font-awesome.min.css' %}" rel="stylesheet"/>
+		<!-- Custom styles for this template -->
+		<link href="{% static 'css/style.css' %}" rel="stylesheet"/>
+		<!-- responsive style -->
+		<link href="{% static 'css/responsive.css' %}" rel="stylesheet"/>
+	</head>
+	<body>
+		<div class="hero_area">
+			<div class="bg-box">
+				<img src="{% static 'images/hero-bg.webp' %}" alt="">
+			</div>
+			<!-- header section strats -->
+			<header class="header_section">
+				<div class="container">
+					<nav class="navbar navbar-expand-lg custom_nav-container ">
+						<a class="navbar-brand" href="#">
+						<span>
+						PhoneReview
+						</span>
+						</a>
+						<button class="navbar-toggler" type="button" data-toggle="collapse"
+							data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+							aria-expanded="false" aria-label="Toggle navigation">
+						<span class=""> </span>
+						</button>
+						<div class="collapse navbar-collapse" id="navbarSupportedContent">
+							<ul class="navbar-nav mx-auto ">
+								<li class="nav-item active">
+									<a class="nav-link" href="#">Home <span
+										class="sr-only">(current)</span></a>
+								</li>
+								<li class="nav-item">
+									<a class="nav-link" href="#about">About</a>
+								</li>
+							</ul>
+						</div>
+					</nav>
+				</div>
+			</header>
+			<!-- end header section -->
+			<!-- slider section -->
+			<section class="slider_section ">
+				<div id="customCarousel1" class="carousel slide" data-ride="carousel">
+					<div class="carousel-inner">
+						<div class="carousel-item active">
+							<div class="container ">
+								<div class="row">
+									<div class="col-md-7 col-lg-6 ">
+										<div class="detail-box">
+											<h1>
+												Welcome
+											</h1>
+											<p>
+												Welcome to our phone review web application! We're excited to provide you with
+												the latest and most informative reviews of all the top smartphones on the market.
+											</p>
+											<div class="btn-box">
+												<a href="" class="btn1">
+												Learn More
+												</a>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="container">
+						<ol class="carousel-indicators">
+							<li data-target="#customCarousel1" data-slide-to="0" class="active"></li>
+						</ol>
+					</div>
+				</div>
+			</section>
+			<!-- end slider section -->
+		</div>
+
+		<!-- phone details section -->
+		<section class="food_section layout_padding">
+			<div class="container">
+			  <div class="heading_container heading_center">
+				<h2>
+				  Our Models
+				</h2>
+			  </div>
+			  <ul class="filters_menu">
+				<li class="active" data-filter="*">All</li>
+				{% for brand in brands %}
+				<li data-filter=".{{ brand.name }}">{{ brand.name }}</li>
+				{% endfor %}
+			  </ul>
+			  <div class="filters-content">
+				<div class="row grid">
+				  {% for model in models %}
+				  <div class="col-sm-6 col-lg-4 all {{ model.brand }}">
+					<div class="box">
+					  <div>
+						<div class="img-box">
+						  <img src="{% static 'images/' %}{{ model.brand }}.png" alt="">
+						</div>
+						<div class="detail-box">
+						  <h5>
+							{{ model.name }}
+						  </h5>
+						  <p>
+							Product Launch Date :  {{ model.launch_date }}
+							Platform :  {{ model.platform }}
+						  </p>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  {% endfor %}
+				</div>
+			  </div>
+			  <div class="btn-box">
+				<a href="">
+				  View More
+				</a>
+			  </div>
+			</div>
+		</section>
+		<!-- end food section -->
+
+
+		<section class="about_section layout_padding">
+			<div id="about" class="container">
+				<div class="row">
+					<div class="col-md-6">
+						<div class="img-box">
+							<img src="{% static 'images/Samsung.png' %}" alt="">
+						</div>
+					</div>
+					<div class="col-md-6">
+						<div class="detail-box">
+							<div class="heading_container">
+								<h2>
+									We Are PhoneReview
+								</h2>
+							</div>
+							<p>
+								If you're in the market for a new phone, you'll definitely want to check out our extensive
+                                collection of reviews. Our team of expert reviewers have thoroughly tested and evaluated
+                                the latest devices from all the major manufacturers, including Apple, Samsung, Google, and more.
+							</p>
+                            <p>
+								Our reviews cover everything from design and build quality to performance and battery life.
+                                We also take a close look at the cameras, display, and other features that can make or break a
+                                smartphone experience.
+							</p>
+							<p>
+								But we don't just focus on the high-end devices. We also review more affordable options,
+								as well as mid-range models that offer great value for your money.
+							</p>
+							<p>
+								Our reviews are unbiased and honest, so you can trust that you're getting a fair assessment
+								of each device. We also include plenty of photos and videos to give you a close-up look
+								at the phones in action.
+							</p>
+							<p>
+								If you're not sure where to start, you can use our handy search function to filter
+								reviews by brand, price range, or specific features. You can also read our informative
+								articles on the latest smartphone trends and innovations.
+							</p>
+							<p>
+								So whether you're looking for a top-of-the-line flagship device or a budget-friendly
+								option, our phone review web application is your one-stop-shop for all things smartphone.
+							</p>
+							<a href="">
+							    Read More
+							</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- footer section -->
+		<footer class="footer_section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 footer-col">
+						<div class="footer_contact">
+							<h4>
+								Contact Us
+							</h4>
+							<div class="contact_link_box">
+								<a href="">
+								<i class="fa fa-map-marker" aria-hidden="true"></i>
+								<span>
+								Location
+								</span>
+								</a>
+								<a href="">
+								<i class="fa fa-phone" aria-hidden="true"></i>
+								<span>
+								Call +01 1234567890
+								</span>
+								</a>
+								<a href="">
+								<i class="fa fa-envelope" aria-hidden="true"></i>
+								<span>
+								demo@gmail.com
+								</span>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 footer-col">
+						<div class="footer_detail">
+							<a href="" class="footer-logo">
+							PhoneReview
+							</a>
+							<p>
+								Get the latest and most informative reviews on all the top smartphones with our phone review app.
+							</p>
+							<div class="footer_social">
+								<a href="">
+								<i class="fa fa-facebook" aria-hidden="true"></i>
+								</a>
+								<a href="">
+								<i class="fa fa-twitter" aria-hidden="true"></i>
+								</a>
+								<a href="">
+								<i class="fa fa-linkedin" aria-hidden="true"></i>
+								</a>
+								<a href="">
+								<i class="fa fa-instagram" aria-hidden="true"></i>
+								</a>
+								<a href="">
+								<i class="fa fa-pinterest" aria-hidden="true"></i>
+								</a>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 footer-col">
+						<h4>
+							Opening Hours
+						</h4>
+						<p>
+							Everyday
+						</p>
+						<p>
+							9.00 AM - 5.00 PM
+						</p>
+					</div>
+				</div>
+				<div class="footer-info">
+					<p>
+						&copy; <span id="displayYear"></span> All Rights Reserved By
+						<a href="#">John Doe</a><br><br>
+						&copy; <span id="displayYear"></span> Distributed By
+						<a href=#" target="_blank">SampleInc</a>
+					</p>
+				</div>
+			</div>
+		</footer>
+		<!-- footer section -->
+		<!-- jQuery -->
+		<script src="{% static 'js/jquery-3.4.1.min.js' %}"></script>
+		<!-- popper js -->
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+			integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+			crossorigin="anonymous"></script>
+		<!-- bootstrap js -->
+		<script src="{% static 'js/bootstrap.js' %}"></script>
+		<!-- owl slider -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+		<!-- isotope js -->
+		<script src="https://unpkg.com/isotope-layout@3.0.4/dist/isotope.pkgd.min.js"></script>
+		<!-- nice select -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"></script>
+		<!-- custom js -->
+		<script src="{% static 'js/custom.js' %}"></script>
+		<!-- Google Map -->
+		<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCh39n5U-4IoWpsVGUHWdqB6puEkhRLdmI&callback=myMap"></script>
+		<!-- End Google Map -->
+	</body>
+</html>

@@ -22,5 +22,6 @@ urlpatterns = [
     path('labone/', include('labone.urls')),
     path('labtwo/', include('labtwo.urls')),
     path('labthree/', include('labthree.urls')),
-    path('labfour/', include('labfour.urls'))
+    path('labfour/', include('labfour.urls')),
+    path('labfive/', include('labfive.urls'))
 ]

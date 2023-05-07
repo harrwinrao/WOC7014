@@ -50,13 +50,13 @@
 						<span class=""> </span>
 						</button>
 						<div class="collapse navbar-collapse" id="navbarSupportedContent">
-							<ul class="navbar-nav  mx-auto ">
+							<ul class="navbar-nav mx-auto ">
 								<li class="nav-item active">
 									<a class="nav-link" href="#">Home <span
 										class="sr-only">(current)</span></a>
 								</li>
 								<li class="nav-item">
-									<a class="nav-link" href="#">About</a>
+									<a class="nav-link" href="#about">About</a>
 								</li>
 							</ul>
 						</div>
@@ -100,12 +100,61 @@
 			</section>
 			<!-- end slider section -->
 		</div>
-		<section class="about_section layout_padding">
+
+		<!-- phone details section -->
+		<section class="food_section layout_padding">
 			<div class="container">
+			  <div class="heading_container heading_center">
+				<h2>
+				  Our Models
+				</h2>
+			  </div>
+			  <ul class="filters_menu">
+				<li class="active" data-filter="*">All</li>
+				{% for brand in brands %}
+				<li data-filter=".{{ brand.name }}">{{ brand.name }}</li>
+				{% endfor %}
+			  </ul>
+			  <div class="filters-content">
+				<div class="row grid">
+				  {% for model in models %}
+				  <div class="col-sm-6 col-lg-4 all {{ model.brand }}">
+					<div class="box">
+					  <div>
+						<div class="img-box">
+						  <img src="{% static 'images/' %}{{ model.brand }}.png" alt="">
+						</div>
+						<div class="detail-box">
+						  <h5>
+							{{ model.name }}
+						  </h5>
+						  <p>
+							Product Launch Date :  {{ model.launch_date }}
+							Platform :  {{ model.platform }}
+						  </p>
+						</div>
+					  </div>
+					</div>
+				  </div>
+				  {% endfor %}
+				</div>
+			  </div>
+			  <div class="btn-box">
+				<a href="">
+				  View More
+				</a>
+			  </div>
+			</div>
+		</section>
+		<!-- end food section -->
+
+
+		<section class="about_section layout_padding">
+			<div id="about" class="container">
 				<div class="row">
 					<div class="col-md-6">
 						<div class="img-box">
-							<img src="{% static 'images/about-img.png' %}" alt="">
+							<img src="{% static 'images/Samsung.png' %}" alt="">
 						</div>
 					</div>
 					<div class="col-md-6">
