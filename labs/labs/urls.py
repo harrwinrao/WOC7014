@@ -23,5 +23,7 @@ urlpatterns = [
     path('labtwo/', include('labtwo.urls')),
     path('labthree/', include('labthree.urls')),
     path('labfour/', include('labfour.urls')),
-    path('labfive/', include('labfive.urls'))
+    path('labfive/', include('labfive.urls')),
+    path('gamereview/', include('gamereview.urls')),
+    path('labnine/', include('labnine.urls'))
 ]

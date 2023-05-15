@@ -14,4 +14,4 @@ def index(request):
         'models': list(models)
     }
     logger.info("Context: ", context)
-    return render(request, "labfivehomepage.html", context)
+    return render(request, "gamereview.html", context)
